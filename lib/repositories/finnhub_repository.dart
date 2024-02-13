@@ -47,10 +47,8 @@ class FinnHubRepository implements AbstractFinnHubRepository {
   List<AvailableStockSymbolModel> _parseAvailableStock(String responseBody) {
     final List<dynamic> parsedListJson = jsonDecode(responseBody);
     final List<AvailableStockSymbolModel> listAvailableStock =
-        List<AvailableStockSymbolModel>.from(parsedListJson
-            // TODO:
-            // Delete when implemented properly, it should be loaded at the appstart
-            .map<AvailableStockSymbolModel>(
+        List<AvailableStockSymbolModel>.from(
+            parsedListJson.map<AvailableStockSymbolModel>(
                 (dynamic json) => AvailableStockSymbolModel.fromJson(json)));
     return listAvailableStock;
   }

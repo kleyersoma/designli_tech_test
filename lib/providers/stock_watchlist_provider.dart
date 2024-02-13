@@ -1,4 +1,3 @@
-
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +71,6 @@ class StockWatchListProvider extends ChangeNotifier {
 
       _stockWatchModelList.add(stockWatchModel);
     }
-    // notifyListeners();
     return _stockWatchModelList;
   }
 
