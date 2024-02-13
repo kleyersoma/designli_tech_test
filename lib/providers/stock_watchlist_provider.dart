@@ -82,6 +82,7 @@ class StockWatchListProvider extends ChangeNotifier {
           value: element.value,
           text: '\$${element.value}'));
     }
+    notifyListeners();
     return chartData;
   }
 

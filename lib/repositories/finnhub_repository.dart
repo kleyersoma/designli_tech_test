@@ -4,16 +4,14 @@ import 'dart:io';
 import 'package:designli_tech_test/api/finnhub_api.dart';
 import 'package:designli_tech_test/entities/available_stock_symbol_model/available_stock_symbol_model.dart';
 import 'package:designli_tech_test/entities/quote_stock_model/quote_stock_model.dart';
-import 'package:designli_tech_test/repositories/abstract_finnhub_repository.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-class FinnHubRepository implements AbstractFinnHubRepository {
+class FinnHubRepository {
   FinnHubRepository({required this.api});
 
   final FinnHubAPI api;
 
-  @override
   Future<List<AvailableStockSymbolModel>> listAvailableStocks() async {
     try {
       final response = await http.get(api.listAvailableStocks());
@@ -29,7 +27,6 @@ class FinnHubRepository implements AbstractFinnHubRepository {
     }
   }
 
-  @override
   Future<QuoteStockModel> quoteStock({required String symbol}) async {
     try {
       final response = await http.get(api.quoteStock(symbol: symbol));

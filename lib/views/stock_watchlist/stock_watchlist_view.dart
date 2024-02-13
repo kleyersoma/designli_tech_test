@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:designli_tech_test/entities/stock_alert_model/stock_alert_model.dart';
 import 'package:designli_tech_test/views/stock_watchlist_graph/stock_watchlist_graph_view.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +86,9 @@ class _StockWatchList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final stockWatchListProvider =
-        Provider.of<StockWatchListProvider>(context, listen: true);
+    final stockWatchListProvider = Provider.of<StockWatchListProvider>(
+      context,
+    );
     return FutureBuilder<List<StockWatchModel>>(
       future: stockWatchListProvider.quoteStockWatchList(),
       builder: (context, snapshot) {
